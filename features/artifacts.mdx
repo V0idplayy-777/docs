@@ -1,0 +1,46 @@
+---
+title: "Coding Artifacts: Generate and Preview Code Live"
+sidebarTitle: "Artifacts"
+description: "Overmind detects code in AI responses and renders interactive coding artifacts with a live preview tab and a code view — no copy-paste required."
+---
+
+When Overmind's response contains code — especially HTML, CSS, and JavaScript — it can automatically render an interactive artifact panel directly in the chat. Instead of copying snippets into a separate editor, you get a live, runnable result right alongside the conversation.
+
+## What is an Artifact?
+
+An artifact is a split-panel view that slides open on the right side of the chat area when the AI generates a runnable snippet. It has two tabs:
+
+- **Preview** — A live rendered output of the code, updated in real time.
+- **Code** — The raw source you can read, review, or copy.
+
+For multi-file artifacts, a file list appears so you can navigate between the individual files that make up the project.
+
+## Triggering Artifacts
+
+Ask Overmind to write code for you and it will detect runnable output and open the artifact panel automatically. Some example prompts that trigger artifacts:
+
+- *"Write me a JavaScript countdown timer"*
+- *"Create an HTML form with validation"*
+- *"Build a CSS animated loading spinner"*
+
+You don't need any special syntax or commands — Overmind recognizes when a response contains executable code and opens the panel on its own.
+
+## Example
+
+```
+You: Create a simple to-do list app in HTML, CSS, and JavaScript.
+Overmind: [generates code → artifact panel opens with Preview and Code tabs]
+```
+
+The artifact panel slides in from the right of the chat area. The **Preview** tab activates by default so you can see the result immediately, and the chat remains scrollable on the left so you can read the explanation alongside it.
+
+## Navigating Artifacts
+
+- Click **Preview** to see the live rendered output of the generated code.
+- Click **Code** to read the raw source or copy it to your clipboard.
+- For multi-file artifacts, click individual file names in the file list to switch between them and inspect each file's contents.
+- Click the **✕** close button in the artifact header to dismiss the panel and return to the full-width chat view.
+
+<Note>
+Artifacts run in an isolated iframe. They cannot access your chat history or browser data.
+</Note>

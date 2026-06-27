@@ -1,0 +1,38 @@
+---
+title: "How Overmind Remembers Context Across Chats"
+sidebarTitle: "Memory"
+description: "Learn how Overmind uses cross-chat memory and smart context compression to maintain coherent conversations, and how to control these behaviors."
+---
+
+Overmind can draw on your past conversations as extra context when you start a new chat, so it already knows what you've been working on. It also automatically compresses long conversations in the background to keep responses fast and coherent — no manual management required.
+
+## Cross-Chat Memory
+
+When memory is enabled, Overmind pulls the last 30 messages from your recent chat history and includes them as context whenever you send a new message. This means the AI can recall preferences you've expressed, projects you're working on, or decisions you've already made — even when you open a brand-new chat.
+
+You control this behavior from **Settings → Privacy** using the toggle labeled **Memory** (described in the panel as *"When on, the bot can use prior chats as extra context"*). Memory is **on by default**.
+
+## Smart Context Compression
+
+As a conversation grows very long, Overmind automatically compresses the older portion of the chat into a structured summary. This keeps the total context within the model's limits without losing the thread of your conversation.
+
+The compression process:
+
+- Triggers once the estimated token count of a chat's history exceeds an internal threshold.
+- Preserves **key facts**, **decisions**, **user preferences**, **ongoing topics**, and any checklist outcomes from the summarized portion.
+- Keeps the **12 most recent messages** verbatim, so the tail of the conversation is always intact.
+- Replaces the older messages with a single system-level summary block marked `=== CONVERSATION SUMMARY ===`.
+
+The compression runs silently in the background — you won't see a spinner or notice any interruption.
+
+## Disabling Memory
+
+To stop Overmind from using past chats as context, go to **Settings → Privacy** and turn off the **Memory** toggle. Once it's off, each new conversation starts fresh, and only the messages in the current chat window are sent to the model.
+
+<Note>
+  Context compression is separate from memory. Even with memory turned off, Overmind may compress a very long single conversation to keep it manageable.
+</Note>
+
+## Session Context
+
+Within a single open conversation, Overmind keeps the full message history available unless compression is triggered. **Pinned messages are always preserved in context**, regardless of compression — they are stored independently in your browser and are never discarded by the summarization process.

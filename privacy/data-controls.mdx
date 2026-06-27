@@ -1,0 +1,58 @@
+---
+title: "Control Your Data: Storage, Export & Deletion"
+sidebarTitle: "Data Controls"
+description: "Overmind stores your chats in your browser's localStorage. Learn how to export, delete, or prevent storage of your conversations entirely."
+---
+
+Overmind stores all of your chat history locally in your browser using `localStorage` — your conversations never leave your device, except when the content of a message is sent to the AI API to generate a response. There is no account, no cloud sync, and no server-side storage.
+
+## Where Data Lives
+
+Everything Overmind knows about you lives in your browser's `localStorage` under the following keys:
+
+| Key | What it stores |
+|---|---|
+| `overmind_chats` | All chat conversations and their messages |
+| `overmind_settings` | Your preferences (theme, tone, memory toggle, etc.) |
+| `overmind_pins` | Any messages you've pinned across your chats |
+| `overmind_daily_messages` | Your daily message count for the usage limit |
+
+No account is required to use Overmind, and none of this data is uploaded to a server.
+
+## Exporting Your Chats
+
+You can download a full backup of all your conversations at any time.
+
+1. Open **Settings → Privacy**.
+2. Click **Export chats**.
+
+Overmind downloads a file named `overmind-all-chats.json` containing every conversation in JSON format. You can also export the **current chat only** as a Markdown file using the keyboard shortcut <kbd>Ctrl</kbd>+<kbd>J</kbd> (or <kbd>Cmd</kbd>+<kbd>J</kbd> on Mac).
+
+## Deleting All Chats
+
+To permanently wipe every saved conversation from your browser:
+
+1. Open **Settings → Privacy**.
+2. Click **Clear all chats**.
+3. Confirm the deletion when prompted.
+
+Overmind asks for confirmation before proceeding. Once you confirm, all chats and pinned messages are removed from `localStorage` and a new empty chat opens automatically.
+
+<Warning>
+  Clearing all chats is permanent and cannot be undone. Export your chats first if you want to keep a backup.
+</Warning>
+
+## Never Store Mode
+
+If you'd rather Overmind never write your conversations to `localStorage` at all, toggle **Never store chat history** in **Settings → Privacy**. While this mode is active:
+
+- No new messages are written to `localStorage`.
+- Any chats you had previously saved are immediately cleared when you enable the toggle and save settings.
+- Your conversation exists only in memory for the current browser tab session.
+- Closing or refreshing the tab permanently discards everything.
+
+Turn the toggle off (and save settings) at any time to resume normal storage.
+
+<Note>
+  Overmind's localStorage data is tied to your specific browser and device. Clearing your browser's site data, using private/incognito mode, or switching to a different browser will result in lost history that cannot be recovered.
+</Note>

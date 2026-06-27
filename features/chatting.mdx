@@ -1,0 +1,54 @@
+---
+title: "Chatting with Overmind: Messages, Streaming & Suggestions"
+sidebarTitle: "Chatting"
+description: "Learn how to send messages, use suggested prompts, and get streaming AI responses from Overmind. Covers the chat interface and message flow."
+---
+
+This page walks you through the core chat experience in Overmind — from the moment you open the app to sending messages and reading AI responses. Whether you're new to Overmind or want to get more out of it, this guide covers everything that happens in the main chat flow.
+
+## The Chat Interface
+
+Overmind's layout is divided into four main areas:
+
+- **Sidebar** — The left panel shows your list of saved chats, a **+ New Chat** button at the top, a **Settings** button, and a search box to filter your conversations.
+- **Top bar** — The header across the top displays the current version number (`v1.11.0`), a **🌐 Beacons (Beta)** button, a **📝 Summarize Chat** button, and a **☰ menu** button on the far right.
+- **Chat area** — The main content region where messages appear. On a fresh chat, you'll see the welcome text *"I am Overmind. What do you seek?"* centered in the area.
+- **Input area** — The message composer at the bottom of the screen, containing a resizable textarea and a circular **↑** send button.
+
+## Sending Messages
+
+To send a message, click inside the textarea at the bottom of the screen and start typing. When you're ready to send:
+
+- Press **Enter** to submit your message immediately.
+- Click the **↑** button to send with your mouse or trackpad.
+
+If you need to write a multi-line message, press **Shift+Enter** to insert a line break without sending. The textarea grows automatically as your message gets longer, up to a maximum height before it becomes scrollable.
+
+## Streaming Responses
+
+Overmind doesn't wait until a response is fully generated before showing it to you. As soon as the AI starts producing output, the text streams into the chat in real time. A **blinking cursor** appears at the end of the growing response so you always know generation is still in progress. Once the cursor disappears, the response is complete.
+
+Overmind's responses are powered by **Cerebras AI**, using the `gpt-oss-120b` model under the hood.
+
+## Suggested Prompts
+
+When you open a new chat, Overmind displays a row of suggested prompt chips below the welcome message. These give you a quick jumping-off point if you're not sure what to ask. The default suggestions are:
+
+- *Tell me about yourself*
+- *What can you help me with?*
+- *Explain something interesting*
+- *Write a short motivational quote*
+
+Click any chip to instantly send that prompt — Overmind will load it into the input field and submit it for you. The suggestions disappear as soon as you send your first message in the session.
+
+## Daily Message Limit
+
+<Warning>
+Overmind enforces a limit of **10 messages per day** per browser session. The counter resets automatically at midnight each day based on your local time.
+
+You can see how many messages you have left displayed beneath the input box (e.g., *"8 messages remaining today"*). When you reach the limit, a red notice appears and the input field is disabled — you won't be able to send more messages until the next day.
+</Warning>
+
+## Command Palette
+
+Overmind includes a **Command Palette** for quick access to common actions without navigating menus. Open it by clicking the **☰** menu button in the top bar, or by pressing **Ctrl+K** (or **Cmd+K** on macOS). Type any keyword to filter the list of available commands, then press **Enter** to run the highlighted one. You can also navigate the list with the **↑** and **↓** arrow keys.

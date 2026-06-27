@@ -1,0 +1,82 @@
+---
+title: "Tune Overmind's Response Behavior and Tone"
+sidebarTitle: "Behavior"
+description: "Configure how Overmind thinks and responds using the Behavior settings tab. Adjust thinking mode, tone, language, and anti-hallucination settings."
+---
+
+The Behavior settings tab controls how Overmind formulates and delivers responses — from response depth and conversational tone to language preferences and factual caution. Dialing in these settings makes every conversation feel more tailored to your needs.
+
+## Opening the Behavior Tab
+
+Click **Settings** in the sidebar, then select the **Behavior** tab.
+
+---
+
+## Thinking Mode
+
+The **Thinking style** dropdown determines how much processing Overmind applies before it responds. A hint below the dropdown updates dynamically to describe the selected mode.
+
+| Option | What it does |
+|--------|-------------|
+| **Fast answer** | Respond concisely and directly. Keep answers short. Lower temperature (`0.4`) for tight, predictable replies. |
+| **Balanced** *(default)* | Respond clearly with a helpful amount of detail. A good all-purpose mode for most conversations. |
+| **Step-by-step reasoning** | Reason carefully and explain the solution step by step. Best for complex problems, math, or multi-part questions. Higher temperature (`0.8`) for more exploratory answers. |
+
+---
+
+## Tone
+
+The **Tone** dropdown sets the default conversational style for all of Overmind's responses. The [Response Enhancer plugin](/customization/plugins) actively injects this setting into the system prompt when enabled.
+
+| Option | Description |
+|--------|-------------|
+| **Neutral** *(default)* | Balanced and even-handed — neither overly warm nor stiff. |
+| **Friendly** | Warm and encouraging. Approachable and personable in every reply. |
+| **Formal** | Professional and clear. Precise language, no slang or filler. |
+| **Quirky** | Playful and slightly humorous. Adds personality and wit to responses. |
+| **Concise** | Very direct and brief. Gets to the point without elaboration. |
+
+---
+
+## Language
+
+The **Preferred language** dropdown tells Overmind which language to use by default. Overmind respects this preference in all replies unless you explicitly ask for a different language mid-conversation.
+
+Available options include: English, Spanish, French, German, Portuguese, Mandarin, Japanese, and Korean.
+
+---
+
+## Anti-Hallucination Mode
+
+The **Anti-Hallucination Mode** dropdown instructs Overmind to be more cautious and transparent about uncertainty. When active, Overmind is more likely to say "I'm not sure" or "I don't know" rather than confidently guessing.
+
+| Option | Behavior |
+|--------|----------|
+| **Off (Normal)** | Standard confidence — no additional caution applied. |
+| **Moderate** *(default)* | Overmind flags uncertainty when it is not highly confident. Avoids fabricating details. |
+| **Strict (Strongest)** | Maximum caution. Overmind will refuse to guess and explicitly says "I don't know" whenever it lacks certainty. |
+
+<Tip>
+  Enable **Strict** Anti-Hallucination Mode whenever you are doing factual research, verifying claims, or working with information where accuracy is critical. It significantly reduces the risk of plausible-sounding but incorrect answers.
+</Tip>
+
+---
+
+## Identity
+
+The **Identity** tab (a separate tab in Settings) lets you set a custom name that Overmind uses to refer to itself inside the conversation — for example, rename it to "Aria" or "Assistant" in the system prompt. The UI label at the top of the page always stays **Overmind** regardless of what you enter here; only the model's self-reference in dialogue changes.
+
+---
+
+## Language & Safety
+
+The **Language** tab (also separate from Behavior) gives you two additional controls:
+
+- **Swearing mode** — Choose whether Overmind never swears, always swears naturally, or only uses profanity when the context clearly calls for it (default: *Only when allowed*).
+- **Safety level** — Set how conservatively Overmind handles risky or sensitive topics. Options are **Strict**, **Moderate** *(default)*, and **Permissive**.
+
+---
+
+## Saving Your Changes
+
+Click **Save** at the bottom of the Settings modal to apply all Behavior changes. Settings are stored locally in your browser and persist across sessions.

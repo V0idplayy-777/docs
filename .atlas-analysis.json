@@ -1,0 +1,76 @@
+{
+  "projectType": "saas",
+  "projectName": "Overmind",
+  "projectDescription": "Overmind is a browser-based AI chat assistant with customizable behavior, plugins, and a website integration feature called Beacons.",
+  "theme": "luma",
+  "primaryColor": "#22c55e",
+  "lightColor": "#16a34a",
+  "darkColor": "#0a0a0a",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/chatting",
+              "features/chat-management",
+              "features/message-actions",
+              "features/artifacts"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "customization/appearance",
+              "customization/behavior",
+              "customization/plugins"
+            ]
+          },
+          {
+            "group": "Privacy & Data",
+            "pages": [
+              "privacy/memory",
+              "privacy/data-controls"
+            ]
+          },
+          {
+            "group": "Beacons",
+            "pages": [
+              "beacons/overview",
+              "beacons/integration"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "AI-powered chat with streaming responses",
+    "Multi-chat session management with search",
+    "Message pinning and summarization",
+    "Coding artifacts with live preview",
+    "Plugin system (Response Enhancer, Smart Calculator, Today's Info, Business/School Mode)",
+    "Beacons — embeddable chat widget for any website",
+    "Context memory with smart compression",
+    "Customizable appearance, tone, and accent colors",
+    "Chat export and privacy controls",
+    "Daily message limit with anti-hallucination mode"
+  ],
+  "publicApiSurface": [
+    "Beacons embed snippet (copy-paste script tag)",
+    "Plugin interface: { name, enabled, modifySystemPrompt?, provideTools?, renderWidgets?, init? }",
+    "Settings: theme, font, accent color, tone, language, anti-hallucination, memory, neverStore",
+    "Chat export (JSON download)",
+    "Command palette (keyboard shortcut)",
+    "Suggested prompts on new chat"
+  ]
+}
