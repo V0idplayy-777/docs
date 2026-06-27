@@ -1,7 +1,7 @@
 ---
-title: "Add the Overmind Beacons Widget to Your Website"
+title: "How to Add the Overmind Beacons Widget to Your Site"
 sidebarTitle: "Integration"
-description: "Get the Beacons embed snippet from Overmind and paste it into your website's HTML to add a floating AI chat widget in under a minute."
+description: "Copy the Beacons embed snippet from Overmind and paste it into your website's HTML to add a floating AI chat widget in under a minute."
 ---
 
 Integrating Beacons takes less than a minute. Copy the snippet from Overmind's Beacons page, paste it into your site's HTML, and your floating chat widget is live.
@@ -11,7 +11,7 @@ Integrating Beacons takes less than a minute. Copy the snippet from Overmind's B
     In the Overmind top bar, click the **Beacons** button. This opens the Beacons page where you can view and copy your personal embed code.
   </Step>
   <Step title="Copy the snippet">
-    Click the **Copy** button on the Beacons page. The full embed code is copied to your clipboard and ready to paste.
+    Click the **Copy** button on the Beacons page. The full embed code — with all the necessary connection details already filled in — is copied to your clipboard.
   </Step>
   <Step title="Paste into your HTML">
     Open your website's HTML file and paste the snippet anywhere inside the `<body>` tag — typically just before `</body>`.
@@ -21,70 +21,61 @@ Integrating Beacons takes less than a minute. Copy the snippet from Overmind's B
   </Step>
 </Steps>
 
-## The Embed Snippet
+## What the Snippet Does
 
-Here's a simplified representative version of what the Beacons snippet looks like:
+The snippet you copy from Overmind is a self-contained `<script>` block. You don't need to configure anything — all the connection details are pre-filled when you copy it from the Beacons page. Here is a conceptual overview of what the snippet does:
 
-```html Beacons embed snippet
+```html
 <script type="module">
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+  // 1. Connects to Overmind's backend to fetch the chat interface URL
+  //    (connection details are pre-filled in the snippet you copy)
 
-// Connects to Overmind's backend to load the chat interface URL
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+  // 2. Creates a floating 💬 button fixed to the bottom-right of the screen
+  const btn = document.createElement("div");
+  btn.textContent = "💬";
+  // ... button styles applied automatically
 
-// Creates a floating 💬 button
-const btn = document.createElement("div");
-btn.textContent = "💬";
-btn.style.cssText = `
-  position:fixed; bottom:20px; right:20px;
-  width:56px; height:56px; border-radius:50%;
-  background:#111; color:white;
-  display:flex; align-items:center; justify-content:center;
-  cursor:pointer; z-index:999999; font-size:22px;
-`;
+  // 3. Creates a slide-in overlay panel to host the chat interface
+  const panel = document.createElement("div");
+  // ... panel styles applied automatically
 
-// Creates the sliding overlay panel
-const panel = document.createElement("div");
-panel.style.cssText = `
-  position:fixed; inset:10px; background:white;
-  border-radius:14px; overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,0.4);
-  transform:scale(0); transform-origin:bottom right;
-  transition:0.2s ease; z-index:999998;
-`;
+  document.body.appendChild(btn);
+  document.body.appendChild(panel);
 
-document.body.appendChild(btn);
-document.body.appendChild(panel);
+  // 4. Toggles the panel open/closed on button click
+  btn.onclick = () => {
+    panel.style.transform =
+      panel.style.transform === "scale(1)" ? "scale(0)" : "scale(1)";
+  };
 
-btn.onclick = () => {
-  panel.style.transform =
-    panel.style.transform === "scale(1)" ? "scale(0)" : "scale(1)";
-};
-
-// Loads the Overmind chat URL into the iframe
-async function load() {
-  const { data } = await supabase.from("scripts").select("url").limit(1).maybeSingle();
-  if (data?.url) {
-    panel.innerHTML = `<iframe src="${data.url.trim()}" style="width:100%;height:100%;border:none;"></iframe>`;
+  // 5. Loads the Overmind chat URL into an iframe inside the panel
+  async function load() {
+    const { data } = await supabase.from("scripts").select("url").maybeSingle();
+    if (data?.url) {
+      panel.innerHTML = `<iframe src="${data.url}" style="width:100%;height:100%;border:none;"></iframe>`;
+    }
   }
-}
 
-load();
+  load();
 </script>
 ```
 
+<Note>
+  Never share or publish the snippet's raw connection details. The snippet is intended for your own website only — treat it like a private API key.
+</Note>
+
 ## Customizing the Button
 
-You can modify the button's appearance directly in the style string to match your site's design. The most common adjustments are:
+You can modify the button's appearance directly in the style string to match your site's design. Copy the snippet first, then adjust these values:
 
-- **Color** — change `background:#111` to any CSS color value. For example, to use blue: `background:#3b82f6`
+- **Color** — change `background:#111` to any CSS color value. For example, blue: `background:#3b82f6`
 - **Size** — adjust `font-size:22px` to make the emoji icon larger or smaller
-- **Position** — change the `bottom:20px` and `right:20px` values to reposition the button anywhere along the bottom edge of the screen
-
-<Note>
-  The Beacons widget runs in an isolated iframe. It doesn't share data with your website's JavaScript environment.
-</Note>
+- **Position** — change the `bottom:20px` and `right:20px` values to reposition the button along any edge of the screen
 
 <Tip>
   For best results, paste the snippet just before the closing `</body>` tag so your page content loads first.
 </Tip>
+
+<Note>
+  The Beacons widget runs in an isolated iframe. It does not share data with your website's JavaScript environment.
+</Note>

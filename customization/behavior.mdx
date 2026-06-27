@@ -1,5 +1,5 @@
 ---
-title: "Tune Overmind's Response Behavior and Tone"
+title: "Tune Overmind's Response Behavior, Tone, and Language"
 sidebarTitle: "Behavior"
 description: "Configure how Overmind thinks and responds using the Behavior settings tab. Adjust thinking mode, tone, language, and anti-hallucination settings."
 ---
@@ -14,19 +14,19 @@ Click **Settings** in the sidebar, then select the **Behavior** tab.
 
 ## Thinking Mode
 
-The **Thinking style** dropdown determines how much processing Overmind applies before it responds. A hint below the dropdown updates dynamically to describe the selected mode.
+The **Thinking style** dropdown determines how much effort Overmind puts into reasoning before it responds. A hint below the dropdown updates dynamically to describe the selected mode.
 
 | Option | What it does |
 |--------|-------------|
-| **Fast answer** | Respond concisely and directly. Keep answers short. Lower temperature (`0.4`) for tight, predictable replies. |
-| **Balanced** *(default)* | Respond clearly with a helpful amount of detail. A good all-purpose mode for most conversations. |
-| **Step-by-step reasoning** | Reason carefully and explain the solution step by step. Best for complex problems, math, or multi-part questions. Higher temperature (`0.8`) for more exploratory answers. |
+| **Fast answer** | Responds concisely and directly. Keeps answers short and focused. Best for quick lookups or simple questions. |
+| **Balanced** *(default)* | Responds clearly with a helpful amount of detail. A good all-purpose mode for most conversations. |
+| **Step-by-step reasoning** | Reasons carefully and explains the solution step by step. Best for complex problems, math, or multi-part questions. |
 
 ---
 
 ## Tone
 
-The **Tone** dropdown sets the default conversational style for all of Overmind's responses. The [Response Enhancer plugin](/customization/plugins) actively injects this setting into the system prompt when enabled.
+The **Tone** dropdown sets the default conversational style for all of Overmind's responses. The [Response Enhancer plugin](/customization/plugins) actively enforces this setting when enabled.
 
 | Option | Description |
 |--------|-------------|
@@ -64,7 +64,7 @@ The **Anti-Hallucination Mode** dropdown instructs Overmind to be more cautious 
 
 ## Identity
 
-The **Identity** tab (a separate tab in Settings) lets you set a custom name that Overmind uses to refer to itself inside the conversation — for example, rename it to "Aria" or "Assistant" in the system prompt. The UI label at the top of the page always stays **Overmind** regardless of what you enter here; only the model's self-reference in dialogue changes.
+The **Identity** tab (a separate tab in Settings) lets you set a custom name that Overmind uses to refer to itself inside the conversation — for example, rename it to "Aria" or "Assistant." The UI label at the top of the page always stays **Overmind** regardless of what you enter here; only the model's self-reference in dialogue changes.
 
 ---
 
@@ -79,4 +79,4 @@ The **Language** tab (also separate from Behavior) gives you two additional cont
 
 ## Saving Your Changes
 
-Click **Save** at the bottom of the Settings modal to apply all Behavior changes. Settings are stored locally in your browser and persist across sessions.
+Click **Save** at the bottom of the Settings modal to apply all Behavior changes. Settings are stored in your browser and persist across sessions.

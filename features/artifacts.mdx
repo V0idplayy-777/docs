@@ -11,9 +11,7 @@ When Overmind's response contains code — especially HTML, CSS, and JavaScript 
 An artifact is a split-panel view that slides open on the right side of the chat area when the AI generates a runnable snippet. It has two tabs:
 
 - **Preview** — A live rendered output of the code, updated in real time.
-- **Code** — The raw source you can read, review, or copy.
-
-For multi-file artifacts, a file list appears so you can navigate between the individual files that make up the project.
+- **Code** — The raw source of all detected code blocks, which you can read, review, or copy.
 
 ## Triggering Artifacts
 
@@ -38,9 +36,12 @@ The artifact panel slides in from the right of the chat area. The **Preview** ta
 
 - Click **Preview** to see the live rendered output of the generated code.
 - Click **Code** to read the raw source or copy it to your clipboard.
-- For multi-file artifacts, click individual file names in the file list to switch between them and inspect each file's contents.
 - Click the **✕** close button in the artifact header to dismiss the panel and return to the full-width chat view.
 
 <Note>
 Artifacts run in an isolated iframe. They cannot access your chat history or browser data.
 </Note>
+
+<Warning>
+Multi-page navigation within artifact previews is not currently supported. Links inside the preview that would navigate to a separate page will show a notice instead of opening a new page. Single-file HTML, CSS, and JavaScript previews work fully.
+</Warning>

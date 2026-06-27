@@ -1,27 +1,27 @@
 ---
-title: "How Overmind Remembers Context Across Chats"
+title: "How Overmind Remembers Context Across All Your Chats"
 sidebarTitle: "Memory"
-description: "Learn how Overmind uses cross-chat memory and smart context compression to maintain coherent conversations, and how to control these behaviors."
+description: "Learn how Overmind uses cross-chat memory and smart context compression to keep conversations coherent, and how to control these behaviors."
 ---
 
-Overmind can draw on your past conversations as extra context when you start a new chat, so it already knows what you've been working on. It also automatically compresses long conversations in the background to keep responses fast and coherent — no manual management required.
+Overmind can draw on your past conversations as extra context when you start a new chat, so it already knows what you've been working on. It also automatically manages the length of long conversations in the background to keep responses fast and coherent — no manual management required.
 
 ## Cross-Chat Memory
 
-When memory is enabled, Overmind pulls the last 30 messages from your recent chat history and includes them as context whenever you send a new message. This means the AI can recall preferences you've expressed, projects you're working on, or decisions you've already made — even when you open a brand-new chat.
+When memory is enabled, Overmind draws on your recent chat history and includes it as context whenever you send a new message. This means the AI can recall preferences you've expressed, projects you're working on, or decisions you've already made — even when you open a brand-new chat.
 
 You control this behavior from **Settings → Privacy** using the toggle labeled **Memory** (described in the panel as *"When on, the bot can use prior chats as extra context"*). Memory is **on by default**.
 
 ## Smart Context Compression
 
-As a conversation grows very long, Overmind automatically compresses the older portion of the chat into a structured summary. This keeps the total context within the model's limits without losing the thread of your conversation.
+As a conversation grows very long, Overmind automatically compresses the older portion of the chat into a structured summary. This keeps the conversation within a manageable size without losing the thread of your discussion.
 
 The compression process:
 
-- Triggers once the estimated token count of a chat's history exceeds an internal threshold.
+- Triggers automatically once a conversation grows long enough to need it.
 - Preserves **key facts**, **decisions**, **user preferences**, **ongoing topics**, and any checklist outcomes from the summarized portion.
-- Keeps the **12 most recent messages** verbatim, so the tail of the conversation is always intact.
-- Replaces the older messages with a single system-level summary block marked `=== CONVERSATION SUMMARY ===`.
+- Always keeps the most recent messages verbatim, so the tail of the conversation is fully intact.
+- Replaces older messages with a concise summary, seamlessly integrated into the conversation flow.
 
 The compression runs silently in the background — you won't see a spinner or notice any interruption.
 
