@@ -50,8 +50,18 @@
               "beacons/overview",
               "beacons/integration"
             ]
+          },
+          {
+            "group": "Other",
+            "pages": [
+              "features"
+            ]
           }
         ]
+      },
+      {
+        "tab": "Open Overmind",
+        "href": "https://v0idplayy-777.github.io/Overmind/"
       }
     ]
   },
